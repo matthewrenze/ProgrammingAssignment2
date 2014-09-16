@@ -1,7 +1,5 @@
 ## Cached Matrix Inverter
 ## Represents a set of functions used to compute and cache the inverse of a matrix
-## The functions compute the inverse of the matrix if neccessary
-## and use the the cached value where possible
 
 
 ## Creates a special matrix object that can cache its inverse
@@ -35,13 +33,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Computes the inverse of the special matrix returned by makeCacheMatrix
-## using a cached value of the inverted if the matrix has not changed
+## using a cached value of the inverted matrix if the matrix has not changed
 
 cacheSolve <- function(x, ...) {
     i <- x$getinverse()
     
     if (!is.null(i)) {
-        message("getting cached data")
+        message("Getting cached data.")
         return(i)
     }
         
